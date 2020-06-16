@@ -1,0 +1,42 @@
+@import '../../../../assets/styles/variables';
+
+.cheerful-users-wrapper {
+  background-color: $base-bg-darker;
+  .container {
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+    }
+    p {
+      text-align: center;
+      color: $text-grey;
+      margin-bottom: 70px;
+      @media screen and ($feature-max: 400px) {
+        letter-spacing: -1px;
+        margin-bottom: 40px;
+      }
+    }
+    .users-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      gap: 50px 30px;
+      @media screen and ($feature-max: 700px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and ($feature-max: 480px) {
+        grid-template-columns: 1fr;
+      }
+      .user-container {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .sign_up_button {
+      margin-top: 40px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

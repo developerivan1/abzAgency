@@ -1,0 +1,44 @@
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="isSidebarOpened">
+    <div class="logo_mobile">
+      <a class="logo-link" routerLink="/" (click)="toggleSidebar()" >
+        <img src="../../../../assets/images/svg/logo.svg" alt="">
+      </a>
+    </div>
+    <div class="hr"></div>
+    <nav class="navigation">
+      <ul>
+        <li *ngFor="let link of mobileLinks.first_block">
+          <a routerLink="{{ link.url }}" (click)="toggleSidebar()" routerLinkActive="active-link" >{{ link.name }}</a>
+        </li>
+      </ul>
+      <div class="hr"></div>
+      <ul>
+        <li *ngFor="let link of mobileLinks.second_block">
+          <a routerLink="{{ link.url }}">{{ link.name }}</a>
+        </li>
+      </ul>
+      <div class="hr"></div>
+      <ul>
+        <li *ngFor="let link of mobileLinks.third_block">
+          <a routerLink="{{ link.url }}">{{ link.name }}</a>
+        </li>
+      </ul>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container">
+      <a class="logo-link" routerLink="/">
+        <img src="../../../../assets/images/svg/logo.svg" alt="">
+      </a>
+      <nav class="navigation">
+        <ul>
+          <li *ngFor="let link of links">
+            <a routerLink="{{ link.url }}" routerLinkActive="active-link">{{ link.name }}</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="burger-toggle" (click)="toggleSidebar()"><img src="../../../../assets/images/svg/menu icon.svg" alt=""></button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

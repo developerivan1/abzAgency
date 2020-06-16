@@ -1,0 +1,52 @@
+<div class="register-wrapper">
+  <div class="container paddings">
+    <div class="register-content">
+      <h1>Register to a get a work</h1>
+      <div class="form-block">
+        <p class="description">Attention! After successful registration and alert, update the list of users in the block from the top</p>
+        <form [formGroup]="rForm" (ngSubmit)="submitForm(rForm.value)" novalidate>
+          <label class="input-label">Name
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="name" placeholder="Your name">
+              <mat-error *ngIf="rForm.get('name').getError('required') && rForm.get('name').touched">This field is required</mat-error>
+              <mat-error *ngIf="rForm.get('name').getError('maxlength') && rForm.get('name').touched">Name must be less than 60 characters</mat-error>
+              <mat-error *ngIf="rForm.get('name').getError('minlength') && rForm.get('name').touched">Тame must be bigger than 2 characters</mat-error>
+            </mat-form-field>
+          </label>
+
+          <label class="input-label">Email
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="email" placeholder="Your email">
+              <mat-error *ngIf="rForm.get('email').getError('required') && rForm.get('email').touched">This field is required</mat-error>
+              <mat-error *ngIf="rForm.get('email').getError('email') && rForm.get('email').touched && !rForm.get('email').hasError('minlength')">Invalid format of email</mat-error>
+              <mat-error *ngIf="rForm.get('email').getError('maxlength') && rForm.get('email').touched">Email must be less than 100 characters</mat-error>
+              <mat-error *ngIf="rForm.get('email').getError('minlength') && rForm.get('email').touched">Name must be bigger than 2 characters</mat-error>
+            </mat-form-field>
+          </label>
+          <label class="input-label">Phone number
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="phone" placeholder="+380 XX XXX XX XX" (keypress)="onlyNumber($event)">
+              <mat-error *ngIf="rForm.get('phone').hasError('required') && rForm.get('phone').touched">This field is required</mat-error>
+              <mat-error *ngIf="rForm.get('phone').errors?.isError && rForm.get('phone').dirty && !rForm.get('phone').hasError('required')">Invalid format of phone number</mat-error>
+              <mat-hint>Enter phone number in open format</mat-hint>
+            </mat-form-field>
+          </label>
+          <p class="select-name">Select your position</p>
+          <mat-radio-group formControlName="position">
+            <div  *ngFor="let item of positionOptions">
+              <mat-radio-button name="position" [value]="item">{{ item.name }}</mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <mat-form-field appearance="outline">
+            <div class="input-file-block">
+              <ngx-mat-file-input [accept]="'.jpg,.jpeg'" formControlName="photo" [valuePlaceholder]="'Upload your photo'"></ngx-mat-file-input>
+              <div class="browse-block">Browse</div>
+            </div>
+            <mat-error *ngIf="rForm.get('photo').getError('required') && rForm.get('photo').touched">Please choose your photo</mat-error>
+          </mat-form-field>
+          <button type="submit" [disabled]="rForm.invalid" class="sign_up_button">Sign up now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

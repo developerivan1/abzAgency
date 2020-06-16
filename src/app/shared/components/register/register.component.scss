@@ -1,0 +1,94 @@
+@import '../../../../assets/styles/variables';
+
+.register-wrapper {
+  width: 100%;
+  .container {
+    display: flex;
+    justify-content: center;
+    .register-content {
+      max-width: 525px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        font-size: 50px;
+        line-height: 54px;
+        text-align: center;
+        font-weight: normal;
+        @media screen and ($feature-max: $mobile) {
+          font-size: 24px !important;
+          line-height: 30px !important;
+        }
+      }
+      .form-block {
+        max-width: 470px;
+        .description {
+          color: $text-grey;
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          mat-form-field {
+            display: block;
+          }
+          .input-file {
+            margin-top: 20px;
+            mat-form-field.file-input {
+              display: flex;
+              width: 100%;
+            }
+          }
+          label {
+            font-size: 16px;
+            ngx-mat-file-input {
+              width: 80%;
+            }
+            .browse-button {
+              font-family: OpenSans, sans-serif;
+              font-size: 16px;
+              width: 50px;
+            }
+            span {
+              font-size: 16px;
+            }
+            .mat-form-field-appearance-outline .mat-form-field-wrapper {
+              width: 100%;
+            }
+          }
+          .select-name {
+            margin-top: 20px;
+          }
+          .sign_up_button {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+.input-file-block {
+  .browse-block {
+    padding: 0 10px;
+    position: absolute;
+    right: -9.5px;
+    top: -7px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid rgba(0,0,0,.12);
+    background-color: #f8f7f5;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: -1;
+  }
+}
+
+mat-form-field {
+  margin-top: 10px;
+}

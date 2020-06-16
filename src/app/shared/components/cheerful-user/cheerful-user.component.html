@@ -1,0 +1,7 @@
+<div class="user-wrapper">
+  <img [src]="userPhoto">
+  <h2 class="name">{{ userName }}</h2>
+  <div class="position text-grey">{{ userPosition }}</div>
+  <div class="email text-grey" (click)="tooltip.toggle()" [ngClass]="{'cutted-email': !isCutEmail}" #tooltip="matTooltip" matTooltip="{{ userEmail }}" [matTooltipDisabled]="isCutEmail">{{ email }}</div>
+  <div class="phone-number text-grey">{{ userPhone }}</div>
+</div>

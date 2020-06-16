@@ -1,0 +1,27 @@
+h2 {
+  font-size: 24px;
+}
+mat-dialog-content {
+  p {
+    margin-bottom: 0;
+    padding: 15px 0;
+    border-top: 1px solid rgb(209, 209, 209);
+    border-bottom: 1px solid rgb(209, 209, 209);
+  }
+}
+mat-dialog-actions {
+  button {
+    width: 80px;
+  }
+  display: flex;
+  justify-content: flex-end;
+}
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+.dialog-content {
+  position: relative;
+}

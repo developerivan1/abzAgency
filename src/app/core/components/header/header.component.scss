@@ -1,0 +1,121 @@
+@import '../../../../assets/styles/variables';
+
+mat-sidenav-container {
+  height: 100%;
+  position: unset;
+  mat-sidenav {
+    height: 100vh !important;
+    width: 290px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .logo_mobile {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+    }
+    .navigation {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 15px 0;
+        li {
+          width: 100%;
+          height: 40px;
+          transition: .3s;
+          a {
+            padding-left: 15px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: $text-black;
+            transition: .3s;
+            box-sizing: border-box;
+          }
+          &:hover {
+            a {
+              color: $secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+  mat-sidenav-content {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    @media screen and ($feature-max: $mobile) {
+      height: 40px;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      .logo-link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .navigation {
+          ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            li {
+              height: 100%;
+              transition: .3s;
+              a {
+                display: flex;
+                align-items: center;
+                padding: 10px 25px;
+                text-decoration: none;
+                color: $text-black;
+                font-size: 14px;
+                transition: .3s;
+                height: 100%;
+                box-sizing: border-box;
+                width: 100%;
+              }
+              &:hover {
+                a {
+                  color: $secondary;
+                }
+              }
+            }
+          }
+          @media screen and ($feature-max: $tablet) {
+            display: none;
+          }
+      }
+      .burger-toggle {
+        display: none;
+        width: 60px;
+        background-color: transparent;
+        border: none;
+        @media screen and ($feature-max: $tablet) {
+          display: block;
+        }
+      }
+    }
+  }
+
+}
+.hr {
+  background-color: #e1e1e1;
+  width: 100%;
+  height: 1px;
+}
+.mat-sidenav-content,
+.mat-sidenav-container,
+.mat-drawer-content {
+    transform: none !important;
+}
+
