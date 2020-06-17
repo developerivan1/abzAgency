@@ -13,7 +13,7 @@
         </app-cheerful-user>
       </div>
     </div>
-    <button [disabled]="users.length === totalUsers" type="button" class="sign_up_button" (click)="showMoreUsers()">
+    <button *ngIf="users.length === totalUsers" type="button" class="sign_up_button" (click)="showMoreUsers()">
       Show more
     </button>
   </div>
